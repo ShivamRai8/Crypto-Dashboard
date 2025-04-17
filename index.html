@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <!-- Spinner -->
+    <div
+      id="spinner"
+      class="flex justify-center items-center h-screen bg-gray-900"
+    >
+      <div
+        class="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin"
+      ></div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="hidden p-6">
+      <!-- Header -->
+      <header
+        class="flex flex-col sm:flex-row justify-between items-center bg-cyan-600 p-4 rounded-lg"
+      >
+        <h1 class="text-2xl font-bold">CRYPTO DASHBOARD</h1>
+        <select
+          id="crypto-select"
+          class="mt-2 sm:mt-0 p-2 rounded bg-gray-800 text-white"
+        >
+          <option value="dogecoin">Dogecoin</option>
+          <option value="bitcoin">Bitcoin</option>
+          <option value="ethereum">Ethereum</option>
+        </select>
+      </header>
+
+      <!-- Main Content -->
+      <main class="mt-6">
+        <!-- Crypto Name -->
+        <h2 id="crypto-name" class="text-xl font-semibold text-center">
+          Dogecoin
+        </h2>
+
+        <!-- Stats Section -->
+        <section id="crypto-info" class="flex flex-wrap gap-4 mt-4">
+          <!-- Data boxes will be dynamically populated here -->
+        </section>
+
+        <!-- Current Price -->
+        <section class="text-center mt-6">
+          <h2 class="text-xl font-semibold">Current Price</h2>
+          <h1 id="current-price" class="text-4xl font-bold text-cyan-400">
+            $0.119262
+          </h1>
+        </section>
+
+        <!-- Additional Stats -->
+        <div class="flex flex-wrap gap-4 justify-center mt-6">
+          <div
+            class="bg-gray-800 p-4 rounded-lg flex-1 min-w-[200px] text-center"
+          >
+            <h3 class="text-lg font-bold">Market Price</h3>
+            <p id="market-price">Loading...</p>
+          </div>
+          <div
+            class="bg-gray-800 p-4 rounded-lg flex-1 min-w-[200px] text-center"
+          >
+            <h3 class="text-lg font-bold">Market Cap</h3>
+            <p id="market-cap">Loading...</p>
+          </div>
+        </div>
+
+        <!-- Chart Section -->
+        <section class="mt-8">
+          <h2 class="text-xl font-semibold text-center">
+            Price Trend (Last 7 Days)
+          </h2>
+          <div id="chart" class="p-4 bg-gray-800 rounded-lg shadow-lg"></div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
